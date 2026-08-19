@@ -69,19 +69,41 @@
 
   main { max-width: 820px; margin: 0 auto; padding: 40px 24px; }
 
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 10px;
+    margin-top: 48px;
+  }
+  .section-label:first-of-type { margin-top: 0; }
+  h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 18px;
+    line-height: 1.1;
+  }
+  .intro {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 22px;
+    line-height: 1.55;
+  }
+
   .photo-wrap {
     position: relative;
     background: #000;
     border-radius: 6px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     line-height: 0;
   }
-  .photo-wrap img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+  .photo-wrap img { width: 100%; height: auto; display: block; }
   .photo-wrap svg.overlay {
     position: absolute;
     inset: 0;
@@ -95,31 +117,21 @@
   .callout-line-outer { stroke: #000000; stroke-width: 6; fill: none; opacity: 0.6; }
 
   .photo-caption {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--muted);
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 22px;
     font-style: italic;
+    padding: 0 8px;
   }
   .photo-caption a { color: var(--muted); text-decoration: underline; }
 
-  h2 {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    margin: 40px 0 20px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--accent);
-    display: inline-block;
-  }
-
-  .legend { display: grid; grid-template-columns: 1fr; gap: 0; }
+  .legend { display: grid; grid-template-columns: 1fr; gap: 0; margin-bottom: 12px; }
   .legend .item {
     display: grid;
-    grid-template-columns: 40px 1fr;
+    grid-template-columns: 34px 1fr;
     gap: 14px;
-    padding: 16px 0;
+    padding: 12px 0;
     border-bottom: 1px solid var(--hairline);
     align-items: baseline;
   }
@@ -127,24 +139,46 @@
     background: var(--accent);
     color: white;
     border-radius: 50%;
-    width: 34px; height: 34px;
+    width: 28px; height: 28px;
     display: inline-flex; align-items: center; justify-content: center;
     font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 700; font-size: 16px;
+    font-weight: 700; font-size: 14px;
   }
   .legend .txt strong {
     font-family: 'Bricolage Grotesque', sans-serif;
-    font-weight: 600; font-size: 17px;
-    display: block; margin-bottom: 4px;
+    font-weight: 600; font-size: 16px;
+    display: block; margin-bottom: 3px;
     letter-spacing: -0.005em; color: var(--ink);
   }
-  .legend .txt { font-size: 15px; color: var(--muted); line-height: 1.55; }
+  .legend .txt { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+  .caveat {
+    background: #FFF6EE;
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .caveat strong {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--hairline);
+    margin: 48px 0 8px;
+  }
 
   .note {
     background: var(--paper-2);
     padding: 22px 24px;
     border-radius: 6px;
-    margin-top: 36px;
+    margin-top: 48px;
     font-size: 15px;
     line-height: 1.6;
   }
@@ -159,26 +193,13 @@
     text-transform: uppercase;
   }
 
-  .not-visible {
-    background: white;
-    border: 1px dashed var(--hairline);
-    padding: 20px 22px;
-    border-radius: 6px;
-    margin-top: 24px;
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.55;
-  }
-  .not-visible strong { color: var(--ink); font-weight: 600; }
-
   @media (max-width: 600px) {
     header h1 { font-size: 28px; }
     main { padding: 30px 18px; }
     h2 { font-size: 22px; }
-    .legend .item { grid-template-columns: 34px 1fr; gap: 12px; padding: 14px 0; }
-    .legend .num { width: 28px; height: 28px; font-size: 14px; }
-    .legend .txt strong { font-size: 16px; }
-    .legend .txt { font-size: 14px; }
+    .legend .item { padding: 10px 0; }
+    .legend .txt strong { font-size: 15px; }
+    .legend .txt { font-size: 13px; }
   }
 </style>
 </head>
@@ -188,18 +209,100 @@
   <div class="top">
     <a href="/" class="back">← zurück zur Übersicht</a>
     <div class="kicker">Motorraum · L76 · 327 cui V8</div>
-    <h1>So sieht's aus.</h1>
-    <div class="sub">Foto eines originalen 1964 Corvette L76-Motorraums mit den wichtigsten Teilen beschriftet. Was du auf deinem eigenen Auto morgen bei Rückl siehst, sitzt an denselben Stellen.</div>
+    <h1>Motor von drei Seiten.</h1>
+    <div class="sub">Wide-Overview, Detail Beifahrer- und Fahrerseite, jeweils mit beschrifteten Bauteilen. Alle Bilder von echten C2 Corvettes aus Wikimedia Commons, alle Teile sitzen auf deinem Wagen an denselben Stellen.</div>
   </div>
 </header>
 
 <main>
 
+  <!-- ============ PHOTO 1: WIDE OVERVIEW ============ -->
+  <div class="section-label">Foto 1 · Draufsicht Front</div>
+  <h2>Der ganze Motorraum auf einen Blick.</h2>
+  <p class="intro">Blick von vorne in den offenen Motorraum eines C2 mit 327er Small-Block. Zeigt Layout: Motor mittig, Chrome-Ventildeckel links + rechts, Lichtmaschine unten links, Bremskreis rechts an der Spritzwand.</p>
+
   <div class="photo-wrap">
-    <img src="engine_web.jpg" alt="1964 Corvette L76 Motorraum">
+    <img src="engine_wide.jpg" alt="C2 Corvette Motorraum Wide Overview">
+    <svg class="overlay" viewBox="0 0 1400 933" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+
+      <!-- 1 - Ventildeckel R -->
+      <path class="callout-line-outer" d="M 750 400 L 1250 200"/>
+      <path class="callout-line" d="M 750 400 L 1250 200"/>
+      <circle class="callout-num-bg" cx="1290" cy="185" r="35"/>
+      <text class="callout-num-txt" x="1290" y="185">1</text>
+
+      <!-- 2 - Luftfilter (round black bottom half + chrome cover) -->
+      <path class="callout-line-outer" d="M 690 640 L 1250 780"/>
+      <path class="callout-line" d="M 690 640 L 1250 780"/>
+      <circle class="callout-num-bg" cx="1290" cy="785" r="35"/>
+      <text class="callout-num-txt" x="1290" y="785">2</text>
+
+      <!-- 3 - Lichtmaschine (dark cylindrical mount lower left) -->
+      <path class="callout-line-outer" d="M 460 500 L 130 780"/>
+      <path class="callout-line" d="M 460 500 L 130 780"/>
+      <circle class="callout-num-bg" cx="95" cy="795" r="35"/>
+      <text class="callout-num-txt" x="95" y="795">3</text>
+
+      <!-- 4 - Kühlerschlauch oben -->
+      <path class="callout-line-outer" d="M 600 380 L 130 200"/>
+      <path class="callout-line" d="M 600 380 L 130 200"/>
+      <circle class="callout-num-bg" cx="95" cy="185" r="35"/>
+      <text class="callout-num-txt" x="95" y="185">4</text>
+
+      <!-- 5 - Hood Prop Rod -->
+      <path class="callout-line-outer" d="M 310 300 L 130 400"/>
+      <path class="callout-line" d="M 310 300 L 130 400"/>
+      <circle class="callout-num-bg" cx="95" cy="410" r="35"/>
+      <text class="callout-num-txt" x="95" y="410">5</text>
+
+      <!-- 6 - Fenderwell / Innenkotflügel -->
+      <path class="callout-line-outer" d="M 300 500 L 130 600"/>
+      <path class="callout-line" d="M 300 500 L 130 600"/>
+      <circle class="callout-num-bg" cx="95" cy="605" r="35"/>
+      <text class="callout-num-txt" x="95" y="605">6</text>
+
+      <!-- 7 - Hauptbremszylinder + Booster -->
+      <path class="callout-line-outer" d="M 990 490 L 1250 380"/>
+      <path class="callout-line" d="M 990 490 L 1250 380"/>
+      <circle class="callout-num-bg" cx="1290" cy="365" r="35"/>
+      <text class="callout-num-txt" x="1290" y="365">7</text>
+
+      <!-- 8 - Ansaug/Vergaser Bereich (under air cleaner) -->
+      <path class="callout-line-outer" d="M 680 570 L 1250 585"/>
+      <path class="callout-line" d="M 680 570 L 1250 585"/>
+      <circle class="callout-num-bg" cx="1290" cy="580" r="35"/>
+      <text class="callout-num-txt" x="1290" y="580">8</text>
+
+    </svg>
+  </div>
+  <div class="photo-caption">
+    C2 Corvette Motorraum · <a href="https://commons.wikimedia.org/wiki/File:Corvette_C2_Engine_-_Cruisin'_for_a_Cure.jpg" target="_blank">Wikimedia Commons</a>
+  </div>
+
+  <div class="legend">
+    <div class="item"><span class="num">1</span><div class="txt"><strong>Ventildeckel R (Right-Hand Valve Cover)</strong>Der ribbedchromdeckel oben rechts. Darunter: Kipphebel + Ventilfedern. Bei deinem L76 hat der Corvette-Schriftzug drauf. Ölfilter-Deckel oben drauf: dort wird Motoröl nachgefüllt.</div></div>
+    <div class="item"><span class="num">2</span><div class="txt"><strong>Luftfilter (Air Cleaner)</strong>Der große schwarz-chrome Rundtopf oben in der Mitte. Filtert die Ansaugluft, sitzt direkt auf dem Holley 4-Barrel Vergaser.</div></div>
+    <div class="item"><span class="num">3</span><div class="txt"><strong>Lichtmaschine (Alternator)</strong>Silberzylinder unten links, vorne am Motor. Erzeugt 12 V Bordstrom, lädt die Batterie. Vom Keilriemen der Kurbelwelle angetrieben.</div></div>
+    <div class="item"><span class="num">4</span><div class="txt"><strong>Kühlerschlauch oben (Upper Radiator Hose)</strong>Dicker schwarzer Gummibogen zwischen Motor und Kühler. Heißes Kühlmittel geht hier vom Motor in den Kühler zum Abkühlen.</div></div>
+    <div class="item"><span class="num">5</span><div class="txt"><strong>Motorhauben-Stützstange</strong>Der silberne Stab links, hält die 40kg Fiberglas-Haube offen. Bei Wartung immer korrekt einrasten!</div></div>
+    <div class="item"><span class="num">6</span><div class="txt"><strong>Innenkotflügel / Fenderwell</strong>Das schwarze Blech zwischen Motor und Karosserie-Außenwand. Trennt Motorraum vom Radhaus.</div></div>
+    <div class="item"><span class="num">7</span><div class="txt"><strong>Hauptbremszylinder + Bremskraftverstärker</strong>Zylinder-Cluster rechts an der Spritzwand. Wandelt Pedalkraft in Bremsdruck. Bei einem 60 Jahre alten Auto ein Wartungs-Kernteil.</div></div>
+    <div class="item"><span class="num">8</span><div class="txt"><strong>Vergaser / Ansaugkrümmer (unter Luftfilter)</strong>Wenn du den Luftfilter abhebst, siehst du hier den Holley 4-Barrel-Vergaser oben auf dem Aluminium-Ansaugkrümmer. Herz der Kraftstoff-Aufbereitung.</div></div>
+  </div>
+
+  <div class="divider"></div>
+
+
+  <!-- ============ PHOTO 2: PASSENGER SIDE DETAIL ============ -->
+  <div class="section-label">Foto 2 · Detail Beifahrerseite</div>
+  <h2>Zündanlage und Bremskreis, aus der Nähe.</h2>
+  <p class="intro">Blick von der Beifahrerseite (rechte Seite des Motors) auf den 1964 L76. Hier sitzen Zündspule, Zündkabel und der Bremskreis dicht beieinander.</p>
+
+  <div class="photo-wrap">
+    <img src="engine_web.jpg" alt="1964 Corvette L76 Motorraum Beifahrerseite">
     <svg class="overlay" viewBox="0 0 1600 1200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
 
-      <!-- 1 - Luftfilter (big chrome round) -->
+      <!-- 1 - Luftfilter -->
       <path class="callout-line-outer" d="M 900 620 L 1400 300"/>
       <path class="callout-line" d="M 900 620 L 1400 300"/>
       <circle class="callout-num-bg" cx="1440" cy="285" r="40"/>
@@ -211,92 +314,122 @@
       <circle class="callout-num-bg" cx="1440" cy="905" r="40"/>
       <text class="callout-num-txt" x="1440" y="905">2</text>
 
-      <!-- 3 - Zündspule (upright black cylinder rear passenger) -->
+      <!-- 3 - Zündspule -->
       <path class="callout-line-outer" d="M 1055 680 L 1400 500"/>
       <path class="callout-line" d="M 1055 680 L 1400 500"/>
       <circle class="callout-num-bg" cx="1440" cy="490" r="40"/>
       <text class="callout-num-txt" x="1440" y="490">3</text>
 
-      <!-- 4 - Zündkabel (red wires) -->
+      <!-- 4 - Zündkabel -->
       <path class="callout-line-outer" d="M 1030 750 L 1400 700"/>
       <path class="callout-line" d="M 1030 750 L 1400 700"/>
       <circle class="callout-num-bg" cx="1440" cy="695" r="40"/>
       <text class="callout-num-txt" x="1440" y="695">4</text>
 
-      <!-- 5 - Ansaugkrümmer (visible dark strip under air cleaner) -->
-      <path class="callout-line-outer" d="M 780 720 L 1400 1080"/>
-      <path class="callout-line" d="M 780 720 L 1400 1080"/>
-      <circle class="callout-num-bg" cx="1440" cy="1090" r="40"/>
-      <text class="callout-num-txt" x="1440" y="1090">5</text>
+      <!-- 5 - Bremszylinder rechts -->
+      <path class="callout-line-outer" d="M 1180 830 L 1400 1130"/>
+      <path class="callout-line" d="M 1180 830 L 1400 1130"/>
+      <circle class="callout-num-bg" cx="1440" cy="1130" r="40"/>
+      <text class="callout-num-txt" x="1440" y="1130">5</text>
 
-      <!-- 6 - Kühlerschlauch oben (thick black hose left of engine) -->
-      <path class="callout-line-outer" d="M 470 690 L 180 500"/>
-      <path class="callout-line" d="M 470 690 L 180 500"/>
-      <circle class="callout-num-bg" cx="140" cy="490" r="40"/>
-      <text class="callout-num-txt" x="140" y="490">6</text>
-
-      <!-- 7 - Wasserpumpe / Riemenscheiben front of engine left -->
-      <path class="callout-line-outer" d="M 580 560 L 180 300"/>
-      <path class="callout-line" d="M 580 560 L 180 300"/>
-      <circle class="callout-num-bg" cx="140" cy="290" r="40"/>
-      <text class="callout-num-txt" x="140" y="290">7</text>
-
-      <!-- 8 - Kühler (radiator core, visible aluminum front left) -->
-      <path class="callout-line-outer" d="M 310 700 L 180 850"/>
-      <path class="callout-line" d="M 310 700 L 180 850"/>
-      <circle class="callout-num-bg" cx="140" cy="860" r="40"/>
-      <text class="callout-num-txt" x="140" y="860">8</text>
-
-      <!-- 9 - Motorhauben-Stützstange (hood prop rod) -->
-      <path class="callout-line-outer" d="M 410 500 L 180 680"/>
-      <path class="callout-line" d="M 410 500 L 180 680"/>
-      <circle class="callout-num-bg" cx="140" cy="690" r="40"/>
-      <text class="callout-num-txt" x="140" y="690">9</text>
-
-      <!-- 10 - Hauptbremszylinder + Booster (right firewall dome) -->
-      <path class="callout-line-outer" d="M 1180 830 L 1400 1200"/>
-      <path class="callout-line" d="M 1180 830 L 1400 1200"/>
-      <circle class="callout-num-bg" cx="1440" cy="1160" r="40"/>
-      <text class="callout-num-txt" x="1440" y="1160">10</text>
+      <!-- 6 - Kühlerschlauch links -->
+      <path class="callout-line-outer" d="M 470 690 L 160 500"/>
+      <path class="callout-line" d="M 470 690 L 160 500"/>
+      <circle class="callout-num-bg" cx="120" cy="490" r="40"/>
+      <text class="callout-num-txt" x="120" y="490">6</text>
 
     </svg>
   </div>
   <div class="photo-caption">
-    Referenzfoto: 1964 Chevrolet Corvette Motorraum · <a href="https://commons.wikimedia.org/wiki/File:1964_Corvette_engine.JPG" target="_blank">Quelle: Wikimedia Commons</a> (CC-Lizenz)
+    1964 Chevrolet Corvette Motorraum · <a href="https://commons.wikimedia.org/wiki/File:1964_Corvette_engine.JPG" target="_blank">Wikimedia Commons</a>
   </div>
 
-  <h2>Legende</h2>
   <div class="legend">
-
-    <div class="item"><span class="num">1</span><div class="txt"><strong>Luftfilter (Air Cleaner)</strong>Der große chromblitzende Rundtopf oben in der Mitte. Filtert die Ansaugluft, sitzt direkt auf dem Vergaser. Wenn du den abnimmst, siehst du den Holley 4-Barrel drunter.</div></div>
-
-    <div class="item"><span class="num">2</span><div class="txt"><strong>Ventildeckel „Corvette" (Valve Cover)</strong>Der schwarz-geriffelte Deckel mit dem chromgeschriebenen „Corvette"-Schriftzug. Darunter: Kipphebel, Ventilfedern, Stößelstangen. Hier wird das Ventilspiel eingestellt. Auf der anderen Motorseite sitzt ein baugleicher.</div></div>
-
-    <div class="item"><span class="num">3</span><div class="txt"><strong>Zündspule (Ignition Coil)</strong>Der kleine schwarz-rote aufrecht stehende Zylinder. Wandelt die 12 V Bordspannung in ~20.000 V Hochspannung für die Zündkerzen. Bei Fehlern hier gibt's schlechten Motorlauf oder Ausfall.</div></div>
-
-    <div class="item"><span class="num">4</span><div class="txt"><strong>Zündkabel (Spark Plug Wires)</strong>Die roten dicken Kabel — führen die Hochspannung von der Spule über den Verteiler zu den 8 Zündkerzen. Bei Klassikern gerne mal die Ursache von Motorruckeln, wenn spröde geworden.</div></div>
-
-    <div class="item"><span class="num">5</span><div class="txt"><strong>Ansaugkrümmer (Intake Manifold)</strong>Aluminium-Verteilerstück direkt unter dem Vergaser. Verteilt Kraftstoff-Luft-Gemisch auf alle 8 Zylinder. Beim L76 ist die Ansaugung aus poliertem Aluminium — verräterisch für die sportliche Motorversion.</div></div>
-
-    <div class="item"><span class="num">6</span><div class="txt"><strong>Kühlerschlauch oben (Upper Radiator Hose)</strong>Der dicke schwarze Gummi-Bogen zwischen Motor und Kühler. Führt heißes Kühlmittel vom Motor in den Kühler zum Abkühlen. Klassisches Verschleißteil, alle 5-10 Jahre wechseln.</div></div>
-
-    <div class="item"><span class="num">7</span><div class="txt"><strong>Wasserpumpe + Riemenscheiben (Front of Engine)</strong>Die verchromten Riemenscheiben vorne am Motor. Kurbelwelle unten, Wasserpumpe oben — beide über Keilriemen verbunden, oft plus Lichtmaschine im selben Riemen-Kreis.</div></div>
-
-    <div class="item"><span class="num">8</span><div class="txt"><strong>Kühler (Radiator)</strong>Die schwarze Wand vor dem Motor. Kühlt das Kühlmittel durch Fahrtwind + Lüfter. Bei C2 aus Aluminium mit Serpentinen-Kernen.</div></div>
-
-    <div class="item"><span class="num">9</span><div class="txt"><strong>Motorhauben-Stützstange (Hood Prop Rod)</strong>Der silberne Stab, der die Haube offen hält. Klemmt bei geschlossener Haube in einer Halterung. Achte drauf, dass er bei Wartung IMMER richtig verriegelt ist — wenn er wegkippt, kommt die 40kg Fiberglashaube runter.</div></div>
-
-    <div class="item"><span class="num">10</span><div class="txt"><strong>Hauptbremszylinder + Bremskraftverstärker</strong>Die goldene Dome + Zylinder rechts an der Spritzwand. Erzeugt Bremsdruck. Wenn du deine Corvette drückst, kommt die Kraft von hier. Bei einem 60 Jahre alten Auto ein kritisches Wartungsteil.</div></div>
-
+    <div class="item"><span class="num">1</span><div class="txt"><strong>Luftfilter</strong>Der Chromtopf. Nimm den ab, um an Vergaser und Kerzen zu kommen.</div></div>
+    <div class="item"><span class="num">2</span><div class="txt"><strong>Ventildeckel „Corvette"</strong>Der ribbed Chromdeckel mit dem chromgeschriebenen Corvette-Schriftzug. Konzern-korrekt für die Sport-Motorenversionen 1963-1965.</div></div>
+    <div class="item"><span class="num">3</span><div class="txt"><strong>Zündspule (Ignition Coil)</strong>Der schwarz-rote aufrechte Zylinder. 12 V → 20.000 V für die Zündkerzen. Häufiges Ausfallteil bei Klassikern.</div></div>
+    <div class="item"><span class="num">4</span><div class="txt"><strong>Zündkabel (Spark Plug Wires)</strong>Die roten dicken Kabel. Führen Hochspannung von der Spule über den Verteiler zu den 8 Kerzen.</div></div>
+    <div class="item"><span class="num">5</span><div class="txt"><strong>Hauptbremszylinder + Bremskraftverstärker</strong>Der goldene Domenzylinder rechts an der Spritzwand.</div></div>
+    <div class="item"><span class="num">6</span><div class="txt"><strong>Kühlerschlauch oben</strong>Verbindet Motor und Kühler oben, führt heißes Kühlmittel zum Abkühlen.</div></div>
   </div>
 
-  <div class="not-visible">
-    <strong>Nicht auf diesem Foto zu sehen</strong> — aber im Werkstattgespräch auch relevant: <strong>Zündverteiler</strong> (rundes Bauteil hinten am Ansaugkrümmer, verteilt Hochspannung zeitrichtig), <strong>Lichtmaschine</strong> (Wechselstrom-Generator, sitzt vorne am Motor Fahrerseite), <strong>Auspuffkrümmer</strong> links + rechts unten am Motor (aus Gusseisen), <strong>Ölfilter</strong> und <strong>Kraftstoffpumpe</strong> auf der Fahrerseite (mechanisch, wird vom Motor angetrieben), <strong>Anlasser</strong> unten rechts hinten am Motor, <strong>Batterie</strong> beifahrerseitig an der Spritzwand.
+  <div class="divider"></div>
+
+
+  <!-- ============ PHOTO 3: DRIVER SIDE DETAIL — DIPSTICK -->
+  <div class="section-label">Foto 3 · Detail Fahrerseite</div>
+  <h2>Wo sitzt der Ölmessstab?</h2>
+  <p class="intro">Blick von der Fahrerseite (linke Seite des Motors) — hier sitzen Lichtmaschine, Ölmessstab und Auspuffkrümmer eng beieinander. Deine Frage direkt beantwortet: Ölmessstab ist links am Block, mit Griff der nach oben zeigt.</p>
+
+  <div class="caveat">
+    <strong>Kleine Einschränkung:</strong> Das Foto zeigt einen 1964 <em>Fuelie</em> (L84 mit mechanischer Kraftstoffeinspritzung) statt deinem L76 mit Vergaser. Der silberne runde Kasten oben (Nr. 1) sitzt bei dir nicht drauf — an dessen Stelle hat dein L76 den chromblitzenden Luftfilter (siehe Foto 1 + 2). Alle anderen Teile (Lichtmaschine, Ölmessstab, Ventildeckel, Auspuffkrümmer) sitzen identisch.
   </div>
+
+  <div class="photo-wrap">
+    <img src="engine_driver.jpg" alt="C2 Corvette Motorraum Fahrerseite mit Ölmessstab">
+    <svg class="overlay" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+
+      <!-- 1 - Fuel Injection (NOT on your L76 - carburetor instead) -->
+      <path class="callout-line-outer" d="M 260 260 L 40 100"/>
+      <path class="callout-line" d="M 260 260 L 40 100"/>
+      <circle class="callout-num-bg" cx="30" cy="80" r="22"/>
+      <text class="callout-num-txt" x="30" y="80" font-size="22">1</text>
+
+      <!-- 2 - Ventildeckel R (mit Corvette-Schriftzug rechts) -->
+      <path class="callout-line-outer" d="M 560 380 L 780 220"/>
+      <path class="callout-line" d="M 560 380 L 780 220"/>
+      <circle class="callout-num-bg" cx="795" cy="205" r="22"/>
+      <text class="callout-num-txt" x="795" y="205" font-size="22">2</text>
+
+      <!-- 3 - Lichtmaschine (silber Zylinder unten mitte-links) -->
+      <path class="callout-line-outer" d="M 220 430 L 40 500"/>
+      <path class="callout-line" d="M 220 430 L 40 500"/>
+      <circle class="callout-num-bg" cx="30" cy="515" r="22"/>
+      <text class="callout-num-txt" x="30" y="515" font-size="22">3</text>
+
+      <!-- 4 - Ölmessstab (approx position — between block and exhaust manifold, driver side) -->
+      <path class="callout-line-outer" d="M 480 480 L 780 490"/>
+      <path class="callout-line" d="M 480 480 L 780 490"/>
+      <circle class="callout-num-bg" cx="795" cy="490" r="22"/>
+      <text class="callout-num-txt" x="795" y="490" font-size="22">4</text>
+
+      <!-- 5 - Auspuffkrümmer (dunkle Gussmasse mit Hitzeschild-Rippen ganz unten) -->
+      <path class="callout-line-outer" d="M 500 560 L 780 380"/>
+      <path class="callout-line" d="M 500 560 L 780 380"/>
+      <circle class="callout-num-bg" cx="795" cy="365" r="22"/>
+      <text class="callout-num-txt" x="795" y="365" font-size="22">5</text>
+
+      <!-- 6 - Zündkerzen-Bereich -->
+      <path class="callout-line-outer" d="M 430 400 L 40 340"/>
+      <path class="callout-line" d="M 430 400 L 40 340"/>
+      <circle class="callout-num-bg" cx="30" cy="325" r="22"/>
+      <text class="callout-num-txt" x="30" y="325" font-size="22">6</text>
+
+    </svg>
+  </div>
+  <div class="photo-caption">
+    1964 Corvette Fuelie (L84) · <a href="https://commons.wikimedia.org/wiki/File:1964_Chevrolet_Corvette_Fuelie_engine.JPG" target="_blank">Wikimedia Commons</a>
+  </div>
+
+  <div class="legend">
+    <div class="item"><span class="num">1</span><div class="txt"><strong>Kraftstoffeinspritzung (L84 Fuelie)</strong>NICHT auf deinem Auto — der silberne Rundkasten war die seltene mechanische Einspritzung. Dein L76 hat statt dessen den chromblitzenden Luftfilter obendrauf (siehe Foto 1+2).</div></div>
+    <div class="item"><span class="num">2</span><div class="txt"><strong>Ventildeckel „Corvette" (rechts im Bild)</strong>Chromdeckel mit Schriftzug. Ölfilter-Verschluss oben drauf — hier wird Öl nachgefüllt.</div></div>
+    <div class="item"><span class="num">3</span><div class="txt"><strong>Lichtmaschine (Alternator)</strong>Der silberne Zylinder unten links. Erzeugt Bordstrom, sitzt vorne am Motor. Bei deinem 1964er ist es der Delcotron-Alternator (nicht mehr der ältere Gleichstrom-Generator wie 1962).</div></div>
+    <div class="item"><span class="num">4</span><div class="txt"><strong>Ölmessstab (Dipstick) — deine Frage</strong>Sitzt IMMER an der Fahrerseite des Motorblocks, zwischen Zylinderkopf und Auspuffkrümmer. Kleiner Griff (Loop oder T-Griff) am oberen Ende, langes Metallrohr das nach unten in die Ölwanne führt. Herausziehen → abwischen → wieder reinstecken → herausziehen → Ölstand ablesen. Sollte zwischen „ADD" und „FULL" liegen.</div></div>
+    <div class="item"><span class="num">5</span><div class="txt"><strong>Auspuffkrümmer L (Left Exhaust Manifold)</strong>Die dunkle geripped Gussmasse unten am Block. Sammelt Abgase aus 4 Zylindern und leitet sie nach unten in die Auspuffanlage. Wird richtig heiß im Betrieb — Vorsicht beim Anfassen nach Fahrt!</div></div>
+    <div class="item"><span class="num">6</span><div class="txt"><strong>Zündkerzen-Bereich</strong>Zwischen Ventildeckel und Krümmer stecken die 4 Zündkerzen dieser Zylinderreihe. Kabel gehen vom Verteiler auf jede Kerze einzeln.</div></div>
+  </div>
+
 
   <div class="note">
-    <strong>Motor auf einen Blick</strong>
-    Small-Block V8 · 327 cui = 5,4 Liter Hubraum · L76 mit 365 PS · Holley 4-Barrel-Vergaser · 11:1 Verdichtung · mechanische Ventilstößel (regelmäßig Ventilspiel einstellen). Klassisches OHV-Design: Ventile im Zylinderkopf, Nockenwelle im Block, Stoßstangen dazwischen. Sprit: nur SuperPlus 98, kein E10.
+    <strong>Schnelle Handhabungs-Merkzettel</strong>
+    <ul style="list-style: none; padding: 0; margin: 0;">
+      <li style="margin-bottom: 8px;"><strong style="text-transform:none; letter-spacing:0; color:var(--ink); display:inline;">Öl checken:</strong> Ölmessstab (Fahrerseite) ziehen · abwischen · wieder rein · wieder raus · zwischen ADD und FULL.</li>
+      <li style="margin-bottom: 8px;"><strong style="text-transform:none; letter-spacing:0; color:var(--ink); display:inline;">Öl nachfüllen:</strong> Deckel oben auf dem Ventildeckel (der mit Corvette-Schriftzug).</li>
+      <li style="margin-bottom: 8px;"><strong style="text-transform:none; letter-spacing:0; color:var(--ink); display:inline;">Kühlmittel prüfen:</strong> Kühlerdeckel vorne am Kühler — <em>NIE bei heißem Motor öffnen</em>, Druck!</li>
+      <li style="margin-bottom: 8px;"><strong style="text-transform:none; letter-spacing:0; color:var(--ink); display:inline;">Bremsflüssigkeit:</strong> Master-Zylinder-Behälter, rechts an der Spritzwand.</li>
+      <li style="margin-bottom: 0;"><strong style="text-transform:none; letter-spacing:0; color:var(--ink); display:inline;">Batterie:</strong> Beifahrerseitig an der Spritzwand — 12 V, negative Masse.</li>
+    </ul>
   </div>
 
 </main>
